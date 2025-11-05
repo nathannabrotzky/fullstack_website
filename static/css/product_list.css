@@ -1,0 +1,134 @@
+/* Main Layout */
+#main-content {
+  padding: 3rem 2rem;
+  background-color: var(--gray-light);
+  color: var(--purple-dark);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Store Intro */
+.store-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.store-intro h1 {
+  font-size: 2.5rem;
+  color: var(--purple);
+  margin-bottom: 0.5rem;
+}
+
+.store-intro p {
+  font-size: 1.2rem;
+  color: var(--purple-dark);
+}
+
+/* Product Grid */
+.product-grid {
+  margin-bottom: 3rem;
+}
+
+.product-grid h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--purple);
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Product Card */
+.product-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  text-align: center;
+}
+
+.product-link img {
+  max-width: auto;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.product-link h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--purple-dark);
+}
+
+/* Price */
+.price {
+  font-weight: bold;
+  color: var(--purple);
+  margin: 0.5rem 0 1rem;
+  text-align: center;
+}
+
+/* Add to Cart */
+.add-to-cart-form {
+  display: flex;
+  justify-content: center;
+}
+
+.add-to-cart-button {
+  background-color: var(--gold);
+  color: var(--purple-dark);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: var(--gold-light);
+}
+
+/* Cart Preview */
+.cart-preview {
+  margin-top: 4rem;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .store-intro h1 {
+    font-size: 2rem;
+  }
+
+  .product-link h3 {
+    font-size: 1rem;
+  }
+
+  .add-to-cart-button {
+    width: 100%;
+  }
+}

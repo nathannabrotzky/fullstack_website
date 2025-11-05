@@ -1,0 +1,93 @@
+/* Base styles */
+.terms-page {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #222;
+  background-color: var(--white);
+  line-height: 1.7;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header Section */
+.terms-header {
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, var(--purple), var(--purple-dark));
+  text-align: center;
+}
+
+.terms-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.terms-header p {
+  font-size: 1.1rem;
+  color: var(--gray-light);
+  max-width: 700px;
+  margin: 0.5rem auto;
+}
+
+/* Section Headings */
+.terms-section {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-bottom: 1px solid #eee;
+}
+
+.terms-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--purple);
+}
+
+.terms-section p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+.terms-section a {
+  color: var(--purple);
+  text-decoration: underline;
+}
+
+.terms-section a:hover {
+  color: var(--purple-dark);
+  text-decoration: none;
+}
+
+/* Footer Note */
+.terms-footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: var(--gray-light);
+  font-size: 1rem;
+  color: #333;
+}
+
+.terms-footer a {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+.terms-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .terms-header h1 {
+    font-size: 2rem;
+  }
+
+  .terms-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .terms-section p {
+    font-size: 0.95rem;
+  }
+}

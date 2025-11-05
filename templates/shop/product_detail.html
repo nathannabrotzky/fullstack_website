@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}{{ product.name }} - My Store{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+<script src="{% static 'js/cart.js' %}" defer></script>
+{% endblock %}
+
+{% block header%}
+  {% include "partials/header.html" %}
+{% endblock %}
+
+{% block content %}
+  <main class="product-page">
+    <section class="product-hero">
+      <div class="product-image">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">{{ product.name }}</h1>
+        <p class="product-price">${{ product.price }}/month (6 months)</p>
+        <p class="product-description">{{ product.description }}</p>
+
+            <form class="add-to-cart-form" action="{% url 'cart_add' product.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="add-to-cart-button">Add to Cart</button>
+            </form>
+      </div>
+    </section>
+
+    {% if related_products %}
+    <section class="related-products">
+      <h2>Related Products</h2>
+      <div class="product-grid">
+        {% for item in related_products %}
+        <div class="product-card">
+          <a href="{% url 'product_detail' item.slug %}">
+            <img src="{{ item.image.url }}" alt="{{ item.name }}" />
+            <h3>{{ item.name }}</h3>
+            <p>${{ item.price }}</p>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </main>
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.html" %}
+{% endblock %}

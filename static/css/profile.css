@@ -1,0 +1,112 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  background-color: var(--white);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Profile Container */
+.profile-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.profile-container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.profile-container p {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.profile-container strong {
+  color: #555;
+}
+
+/* Section Headings */
+.profile-container h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--purple);
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.25rem;
+}
+
+/* Forms */
+form {
+  margin-bottom: 2rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #444;
+}
+
+form input[type="text"],
+form input[type="email"] {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: var(--purple);
+  outline: none;
+}
+
+/* Buttons */
+form button {
+  background-color: var(--purple);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--purple-dark);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-container {
+    padding: 1.5rem;
+  }
+
+  .profile-container h1 {
+    font-size: 1.75rem;
+  }
+
+  .profile-container h2 {
+    font-size: 1.25rem;
+  }
+
+  form button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact Us - My Untold Stories{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block header %}
+  {% include 'partials/header.html' %}
+{% endblock %}
+
+{% block content %}
+<main class="contact-page">
+
+  <!-- Intro Section -->
+  <section class="contact-intro">
+    <h1>We’d Love to Hear From You</h1>
+    <p>Whether you have a question, a collaboration idea, or just want to say hello — we’re here for it. Fill out the form below or reach out directly.</p>
+  </section>
+
+  {% if messages %}
+  <div class="alert success">
+    {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+  </div>
+{% endif %}
+
+  <!-- Contact Form Section -->
+  <section class="contact-form-section">
+    <form method="post" 
+    action="#" 
+    class="contact-form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" id="subject">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea name="message" id="message" rows="6" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Contact Details Section -->
+  <section class="contact-details">
+    <h2>Other Ways to Reach Us</h2>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:myuntoldstory.contact@gmail.com">myuntoldstory.contact@gmail.com</a></li>
+    </ul>
+  </section>
+
+  <!-- Social Links Section -->
+  <section class="contact-social">
+    <h2>Connect With Us</h2>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/myuntoldstories_official?igsh=MWIsYzNhaG41ZmRvdA==" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram fa-2x"></i>
+      </a>
+      <a href="https://www.tiktok.com/@my_untold_stories_o?_t=ZP-90Zxo7jc0Dv&_r=1" target="_blank" aria-label="Twitter">
+        <i class="fa-brands fa-tiktok fa-2x"></i>
+      </a>
+      <a href="https://www.facebook.com/share/19vPxwQi6G/?mibextid==wwXIfr" target="_blank" aria-label="Facebook">
+        <i class="fa-brands fa-facebook fa-2x"></i>
+      </a>
+    </div>
+  </section>
+
+</main>
+{% endblock %}
+
+{% block footer %}
+  {% include 'partials/footer.html' %}
+{% endblock %}

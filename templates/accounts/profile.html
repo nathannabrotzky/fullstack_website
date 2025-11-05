@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Profile - {{ user.username }}{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block header %}
+{% include 'partials/header.html' %}
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="profile-container">
+    <h1>Profile: {{ user.username }}</h1>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>First Name:</strong> {{ user.first_name }}</p>
+    <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+    <p><strong>Date Joined:</strong> {{ user.date_joined }}</p>
+
+    <h2>Update Profile</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}"><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ user.email }}"><br>
+
+        <button type="submit">Update Profile</button>
+    </form>
+
+    <h2>Redeem Codes</h2>
+    <form method="post" action="">
+    {% csrf_token %}
+    <input type="text" name="code" placeholder="Enter access code" required>
+    <button type="submit">Redeem</button>
+    </form>
+
+    <h2>Logout</h2>
+    <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+    </form>
+
+</div>
+{% else %}
+<p>You need to <a href="{% url 'login' %}">log in</a> to view your profile.</p>
+{% endif %}
+{% endblock %}
+
+{% block footer %}
+{% include 'partials/footer.html' %}
+{% endblock %}

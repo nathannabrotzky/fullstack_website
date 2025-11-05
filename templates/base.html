@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Untold Stories{% endblock %}</title>
+    <meta name="description" content="My Untold Stories is a creative storytelling platform offering immersive letter subscriptions, digital experiences, AI-powered exploration portals, and handcrafted physical products like wax seals, artifacts, and printed keepsakes. Discover a world of mystery, imagination, and exceptional craftsmanship.">
+    <meta name="keywords" content="letter subscription, immersive storytelling, AI-powered portal, wax seals, handcrafted artifacts, mystery box, fantasy correspondence, digital letters, creative writing, storytelling gifts, narrative design, subscription gift box, personalized stories, experiential gifts, artisan storytelling, interactive portal, curated stories, bespoke letters, literary subscription, enchanted mail">
+    <meta name="author" content="My Untold Stories Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="My Untold Stories - Premium Letters from Notable Icons">
+    <meta property="og:description" content="My Untold Stories is a subscription-based storytelling experience featuring digital letters, AI-powered portals, and handcrafted artifacts like wax seals and keepsakes. Explore mystery, creativity, and immersive narratives — delivered to your inbox and doorstep.">
+    <meta property="og:image" content="{% static 'img/social-card.png' %}">
+    <meta property="og:url" content="https://myuntoldstories.onrender.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Untold Stories - Premium Letters from Notable Icons">
+    <meta name="twitter:description" content="My Untold Stories is a subscription-based storytelling experience featuring digital letters, AI-powered portals, and handcrafted artifacts like wax seals and keepsakes. Explore mystery, creativity, and immersive narratives — delivered to your inbox and doorstep.">
+    <meta name="twitter:image" content="{% static 'img/social-card.png' %}">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://myuntoldstories.onrender.com">
+    
+    <!-- Theme Color (Mobile Browsers) -->
+    <meta name="theme-color" content="#431c5c">
+    
+    <link rel="icon" href="{% static 'img/logo_master_4000px.png' %}" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="{% static 'js/global.js' %}" defer></script>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        {% block footer %}{% endblock %}
+    </footer>
+</body>
+
+</html>
+

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login & Sign Up{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block header %}
+  {% include 'partials/header.html' %}
+{% endblock %}
+
+{% block content %}
+<main class="auth-container">
+  <section class="auth-box">
+    <div class="form-section login-section">
+      <h2>Login</h2>
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="login_submit">Login</button>
+      </form>
+    </div>
+
+    <div class="form-section signup-section">
+      <h2>Sign Up</h2>
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ signup_form.as_p }}
+        <button type="submit" name="signup_submit">Create Account</button>
+      </form>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block footer %}
+  {% include 'partials/footer.html' %}
+{% endblock %}

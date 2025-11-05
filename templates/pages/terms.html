@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Terms & Conditions - My Untold Stories{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'css/terms.css' %}">
+{% endblock %}
+
+{% block header %}
+  {% include 'partials/header.html' %}
+{% endblock %}
+
+{% block content %}
+<main class="terms-page">
+  <section class="terms-header">
+    <h1>Terms & Conditions</h1>
+    <p>Last updated: October 21, 2025</p>
+    <p>Welcome to My Untold Stories. By accessing or using our website, products, or services, you agree to be bound by the following terms and conditions.</p>
+  </section>
+
+  <section class="terms-section">
+    <h2>1. Use of Our Services</h2>
+    <p>You agree to use our website and services only for lawful purposes. You must not use our site in any way that causes harm, disrupts service, or violates applicable laws.</p>
+  </section>
+
+  <section class="terms-section">
+    <h2>2. Intellectual Property</h2>
+    <p>All content, including text, images, designs, and code, is the property of My Untold Stories or its licensors and is protected by copyright and trademark laws. You may not reproduce, distribute, or modify any content without prior written consent.</p>
+  </section>
+
+  <section class="terms-section">
+    <h2>3. Purchases & Payments</h2>
+    <p>All purchases made through our store are subject to availability and confirmation of payment. We reserve the right to refuse or cancel orders at our discretion. Prices are listed in USD and may change without notice.</p>
+  </section>
+
+  <section class="terms-section">
+    <h2>4. Shipping & Delivery</h2>
+    <p>We aim to ship orders promptly, but delivery times may vary based on location and carrier. We are not responsible for delays caused by external factors.</p>
+  </section>
+
+  <section class="terms-section">
+    <h2>5. Refunds & Returns</h2>
+    <p>We accept returns within 30 days of purchase for unused items in original packaging. Digital products are non-refundable once accessed or downloaded. For return instructions, please contact support@myuntoldstories.com.</p>
+  </section>
+
+  <section class="terms-section">
+    <h2>6. Privacy Policy</h2>
+    <p>Your privacy is important to us. Please review our <a href="{% url 'privacy' %}">Privacy Policy</a> to understand how we collect, use, and protect your personal information.</p>
+  </section>
+
+  <section class="terms-section">
+    <h2>7. Accessibility</h2>
+    <p>We are committed to providing an inclusive experience for all users. If you encounter accessibility barriers, please contact us so we can improve your experience.</p>
+  </section>
+
+  <section class="terms-section">
+    <h2>8. Limitation of Liability</h2>
+    <p>My Untold Stories is not liable for any indirect, incidental, or consequential damages arising from the use of our website or products. Our total liability shall not exceed the amount paid for the product or service.</p>
+  </section>
+
+  <section class="terms-section">
+    <h2>9. Governing Law</h2>
+    <p>These terms are governed by the laws of the State of Utah, United States. Any disputes shall be resolved in the courts of Davis County, Utah.</p>
+  </section>
+
+  <section class="terms-section">
+    <h2>10. Changes to These Terms</h2>
+    <p>We may update these terms from time to time. Changes will be posted on this page with an updated revision date. Continued use of our services constitutes acceptance of the revised terms.</p>
+  </section>
+
+  <section class="terms-footer">
+    <p>If you have any questions about these Terms & Conditions, please contact us at <a href="mailto:myuntoldstory.contact@gmail.com">myuntoldstory.contact@gmail.com</a>.</p>
+  </section>
+</main>
+{% endblock %}
+
+{% block footer %}
+  {% include 'partials/footer.html' %}
+{% endblock %}

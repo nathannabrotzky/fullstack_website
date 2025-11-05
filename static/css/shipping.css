@@ -1,0 +1,105 @@
+/* Base styles */
+.shipping-page {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #222;
+  background-color: var(--white);
+  line-height: 1.7;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header Section */
+.shipping-header {
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, var(--purple), var(--purple-dark));
+  text-align: center;
+}
+
+.shipping-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.shipping-header p {
+  font-size: 1.1rem;
+  color: var(--gray-light);
+  max-width: 700px;
+  margin: 0.5rem auto;
+}
+
+/* Section Styling */
+.shipping-section {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-bottom: 1px solid #eee;
+}
+
+.shipping-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--purple);
+}
+
+.shipping-section p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.shipping-section ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.shipping-section li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Links */
+.shipping-section a {
+  color: var(--purple);
+  text-decoration: underline;
+}
+
+.shipping-section a:hover {
+  text-decoration: none;
+}
+
+/* Footer Note */
+.shipping-footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: var(--gray-light);
+  font-size: 1rem;
+  color: #333;
+}
+
+.shipping-footer a {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+.shipping-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .shipping-header h1 {
+    font-size: 2rem;
+  }
+
+  .shipping-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .shipping-section p,
+  .shipping-section li {
+    font-size: 0.95rem;
+  }
+}

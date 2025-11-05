@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Product List - My Store{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/product_list.css' %}">
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+<script src="{% static 'js/cart.js' %}" defer></script>
+{% endblock %}
+
+{% block header %}
+{% include 'partials/header.html' %}
+{% endblock %}
+
+{% block content %}
+<main id="main-content" role="main" aria-label="Product List">
+  <section class="store-intro">
+    <h1>Welcome to Our Store</h1>
+    <p>Browse our latest products and add your favorites to the cart.</p>
+    <p>Products are shipped in drops. Next drop scheduled for December 1st, 2025.</p>
+  </section>
+
+  <section class="product-grid" aria-labelledby="product-heading">
+    <h2 id="product-heading">Available Products</h2>
+    <ul class="product-list">
+      {% for product in products %}
+        <li class="product-card">
+          <article>
+            <a href="{% url 'product_detail' product.pk %}" class="product-link">
+              <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200" height="200" loading="lazy">
+              <h3>{{ product.name }}</h3>
+            </a>
+            <p class="price">${{ product.price }}/month (6 months)</p>
+            <form class="add-to-cart-form" action="{% url 'cart_add' product.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="add-to-cart-button">Add to Cart</button>
+            </form>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="cart-preview" aria-label="Cart Summary">
+    {% include 'shop/cart_detail.html' %}
+  </section>
+  <!-- Checkout Modal -->
+{% include 'shop/checkout.html' %}
+{% include 'shop/checkout_success.html' %}
+
+</main>
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
+{% block footer %}
+{% include 'partials/footer.html' %}
+
+{% endblock %}

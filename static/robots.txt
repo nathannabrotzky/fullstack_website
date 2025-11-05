@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /account/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /orders/
+Disallow: /profile/
+Disallow: /settings/
+Allow: /
+
+Sitemap: https://www.mystore.com/sitemap.xml
